@@ -32,6 +32,8 @@ render() {
 ```js
 npm test
 
+```
+
 ## License ##
 
 MIT. See [LICENSE.md](http://github.com/szchenghuang/react-children-clone-with-props/blob/master/LICENSE.md) for details.
