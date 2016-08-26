@@ -1,0 +1,36 @@
+{
+  "name": "react-children-clone-with-props",
+  "author": "szchenghuang <szchenghuang@gmail.com>",
+  "version": "0.0.1",
+  "description": "Shorthand to clone React child components with new props added.",
+  "main": "index.js",
+  "keywords": [
+    "react",
+    "children",
+    "props"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/szchenghuang/react-children-clone-with-props/issues"
+  },
+  "homepage": "https://github.com/szchenghuang/react-children-clone-with-props#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szchenghuang/react-children-clone-with-props.git"
+  },
+  "scripts": {
+    "test": "mocha --compilers js:babel-register"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.1.18",
+    "babel-register": "^6.11.6",
+    "chai": "^3.5.0",
+    "chai-things": "^0.2.0",
+    "mocha": "^3.0.1",
+    "react": "^0.14.3"
+  },
+  "peerDevDependencies": {
+    "react": "^0.14.3"
+  }
+}
