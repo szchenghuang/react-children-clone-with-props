@@ -1,4 +1,7 @@
 [![Build Status](https://travis-ci.org/szchenghuang/react-children-clone-with-props.svg?branch=master)](https://travis-ci.org/szchenghuang/react-children-clone-with-props)
+[![NPM Package](https://img.shields.io/npm/v/react-children-clone-with-props.svg)](https://www.npmjs.org/package/react-children-clone-with-props)
+[![Dependency status](https://david-dm.org/szchenghuang/react-children-clone-with-props/status.svg)](https://david-dm.org/szchenghuang/react-children-clone-with-props/)
+[![devDependency status](https://david-dm.org/szchenghuang/react-children-clone-with-props/dev-status.svg)](https://david-dm.org/szchenghuang/react-children-clone-with-props/?type=dev)
 
 # react-children-clone-with-props #
 
