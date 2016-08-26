@@ -14,9 +14,13 @@ function ReactChildrenCloneWithProps( children, props ) {
         return children;
     }
 
-    return React.Children.map( children, function( child ) {
-        return React.cloneElement( child, props );
-    });
+    if ( Array.isArray( children ) ) {
+        return React.Children.map( children, function( child ) {
+            return React.cloneElement( child, props );
+        });
+    }
+
+    return React.cloneElement( children, props );
 };
 
 //#############################################################################

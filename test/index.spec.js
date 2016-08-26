@@ -8,7 +8,13 @@ chai.use( chaiThings );
 
 describe( 'react-children-clone-with-props', function() {
     describe( 'Single prop', function() {
-        const testComp = (
+        const testCompSingle = (
+            <div>
+                <h1>Header1</h1>
+            </div>
+        );
+
+        const testCompMultiple = (
             <div>
                 <h1>Header1</h1>
                 <h2>Header2</h2>
@@ -22,20 +28,30 @@ describe( 'react-children-clone-with-props', function() {
             propC: function() { count++; }
         };
 
-        const childrenWithProps = ReactChildrenCloneWithProps( testComp.props.children, props );
+        const childrenWithPropsSingle = ReactChildrenCloneWithProps( testCompSingle.props.children, props );
+        const childrenWithPropsMultiple = ReactChildrenCloneWithProps( testCompMultiple.props.children, props );
 
         it( 'should length', function() {
-            childrenWithProps.should.have.length( testComp.props.children.length );
+            childrenWithPropsMultiple.should.have.length( testCompMultiple.props.children.length );
         });
 
-        it( 'should all', function() {
-            childrenWithProps.should.all.have.deep.property( 'props.propA', props.propA );
-            childrenWithProps.should.all.have.deep.property( 'props.propB', props.propB );
-            childrenWithProps.should.all.have.deep.property( 'props.propC', props.propC );
+        it( 'should have props', function() {
+            childrenWithPropsSingle.should.have.deep.property( 'props.propA', props.propA );
+            childrenWithPropsSingle.should.have.deep.property( 'props.propB', props.propB );
+            childrenWithPropsSingle.should.have.deep.property( 'props.propC', props.propC );
+
+            childrenWithPropsMultiple.should.all.have.deep.property( 'props.propA', props.propA );
+            childrenWithPropsMultiple.should.all.have.deep.property( 'props.propB', props.propB );
+            childrenWithPropsMultiple.should.all.have.deep.property( 'props.propC', props.propC );
         });
 
         it( 'should function property', function() {
-            childrenWithProps[0].props.propC();
+            count = 0;
+            childrenWithPropsSingle.props.propC();
+            count.should.equal( 1 );
+
+            count = 0;
+            childrenWithPropsMultiple[0].props.propC();
             count.should.equal( 1 );
         });
 
