@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/szchenghuang/react-children-clone-with-props.svg?branch=master)](https://travis-ci.org/szchenghuang/react-children-clone-with-props)
+
 # react-children-clone-with-props #
 
 Shorthand to clone React child components with new props added.
