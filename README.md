@@ -5,7 +5,28 @@
 
 # react-children-clone-with-props #
 
-Shorthand to clone React child components with new props added.
+Shorthand to clone React child components with new props added, with the type
+of the children intact.
+
+## Preliminaries ##
+
+If you simply `React.Chlidren.map` the children and clone the childs regardlessly
+as below, the type of the children may change.
+
+```js
+var newChildren = React.Children.map(
+    this.props.children,
+    child => React.cloneElement( child, {
+        propA: valueA,
+        propB: valueB
+    })
+);
+```
+
+Namely, when `this.props.children` is a single React element, you will have
+`newChildren` as an array since `React.Children.map` turns a single React
+element into an array. Sometimes you may need the type remain intact, and you
+want to save the job checking against the types and returning respectively.
 
 ## Install ##
 
@@ -22,15 +43,20 @@ var ReactChildrenCloneWithProps = require( 'react-children-clone-with-props' );
 import ReactChildrenCloneWithProps from 'react-children-clone-with-props';
 
 render() {
-    var childrenWithProps = ReactChildrenCloneWithProps({
+    var newChildren = ReactChildrenCloneWithProps({
         propA: valueA,
         propB: valueB
     });
 
-    return <div>{ childrenWithProps }</div>;
+    return <div>{ newChildren }</div>;
 }
 
 ```
+
+If `props.children` is a single React element, this utility function returns a
+single React element. If `props.children` is an array of React elements, it
+returns an array. If there is no children, i.e. with `props.children` being null,
+it returns null. The type is intact.
 
 ## Test ##
 
