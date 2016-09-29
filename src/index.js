@@ -10,16 +10,11 @@ import React from 'react';
  * @return {Object} Clone of the children with the props.
  */
 function ReactChildrenCloneWithProps( children, props ) {
-    if ( children == null ) {
-        return children;
-    }
-
-    if ( Array.isArray( children ) ) {
+    if ( children == null || Array.isArray( children ) ) {
         return React.Children.map( children, function( child ) {
             return React.cloneElement( child, props );
         });
     }
-
     return React.cloneElement( children, props );
 };
 
