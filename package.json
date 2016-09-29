@@ -1,7 +1,7 @@
 {
   "name": "react-children-clone-with-props",
   "author": "szchenghuang <szchenghuang@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shorthand to clone React child components with new props added.",
   "main": "index.js",
   "keywords": [
