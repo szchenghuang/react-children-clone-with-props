@@ -8,6 +8,8 @@ chai.use( chaiThings );
 
 describe( 'react-children-clone-with-props', function() {
     describe( 'Single prop', function() {
+        const testCompEmpty = <div></div>;
+
         const testCompSingle = (
             <div>
                 <h1>Header1</h1>
@@ -28,11 +30,16 @@ describe( 'react-children-clone-with-props', function() {
             propC: function() { count++; }
         };
 
+        const childrenWithPropsEmpty = ReactChildrenCloneWithProps( testCompEmpty.props.children, props );
         const childrenWithPropsSingle = ReactChildrenCloneWithProps( testCompSingle.props.children, props );
         const childrenWithPropsMultiple = ReactChildrenCloneWithProps( testCompMultiple.props.children, props );
 
         it( 'should length', function() {
-            childrenWithPropsMultiple.should.have.length( testCompMultiple.props.children.length );
+            should.equal( childrenWithPropsEmpty, testCompEmpty.props.children );
+            React.Children.count( childrenWithPropsSingle ).should.equal(
+              React.Children.count( testCompSingle.props.children ) );
+            React.Children.count( childrenWithPropsMultiple ).should.equal(
+              React.Children.count( testCompMultiple.props.children ) );
         });
 
         it( 'should have props', function() {
