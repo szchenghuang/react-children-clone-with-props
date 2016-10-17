@@ -43,7 +43,7 @@ var ReactChildrenCloneWithProps = require( 'react-children-clone-with-props' );
 import ReactChildrenCloneWithProps from 'react-children-clone-with-props';
 
 render() {
-    var newChildren = ReactChildrenCloneWithProps({
+    var newChildren = ReactChildrenCloneWithProps( children, {
         propA: valueA,
         propB: valueB
     });
@@ -55,8 +55,8 @@ render() {
 
 If `props.children` is a single React element, this utility function returns a
 single React element. If `props.children` is an array of React elements, it
-returns an array. If there is no children, i.e. with `props.children` being null,
-it returns null. The type is intact.
+returns an array. If there is no children, i.e. with `props.children` being `null`,
+it returns `null`. The type remains intact.
 
 ## Test ##
 
